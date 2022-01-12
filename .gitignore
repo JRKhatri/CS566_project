@@ -1,0 +1,4 @@
+# git ignoring files
+
+# dependencies
+node_modules
