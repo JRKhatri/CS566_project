@@ -14,7 +14,9 @@ A web application  where clients can log in and register multiple complaints, up
 ##### Functionalities #####
 
 • Sign up/sign in (Use JWT for authentication and authorization)
+
 • Validation
+
 • Two types of users : 
     1) Clients
       - signup /login 
@@ -26,10 +28,10 @@ A web application  where clients can log in and register multiple complaints, up
     2)Admin (Who manages the complaints);
       - login
       - receive email once complaints is register by clients
-      - view all complaints,
+      - view all complaints
       - process unseen complaints
       - provide feedback and update on each complaints
-      - change the complaints status: Unseen, Inprocess, Completed, Inappropriate.
+      - change the complaints status: Unseen, Inprocess, Completed, Inappropriate
       - create, view, edit and delete contact information
 • Email notifications
 • Store uploaded file in cloud(AWS S3 bucket)
