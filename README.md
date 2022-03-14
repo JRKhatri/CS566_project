@@ -17,8 +17,8 @@ A web application  where clients can log in and register multiple complaints, up
 
 • Validation
 
-• Two types of users : 
-    1) Clients
+• Two types of users   
+    1) Clients  
       - signup /login 
       - create complaint, 
       - upload documents,
