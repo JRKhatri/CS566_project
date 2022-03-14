@@ -18,14 +18,14 @@ A web application  where clients can log in and register multiple complaints, up
 • Validation
 
 • Two types of users   
-    1) Clients  
+    1) Clients    
       - signup /login 
       - create complaint, 
       - upload documents,
       - view update and status of each complaints,
       - view important contact information,
       
-    2)Admin (Who manages the complaints);
+    2)Admin
       - login
       - receive email once complaints is register by clients
       - view all complaints
@@ -33,5 +33,5 @@ A web application  where clients can log in and register multiple complaints, up
       - provide feedback and update on each complaints
       - change the complaints status: Unseen, Inprocess, Completed, Inappropriate
       - create, view, edit and delete contact information
-• Email notifications
-• Store uploaded file in cloud(AWS S3 bucket)
+• Email notifications.  
+• Store uploaded file in cloud(AWS S3 bucket).
