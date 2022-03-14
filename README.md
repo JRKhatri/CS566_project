@@ -19,11 +19,11 @@ A web application  where clients can log in and register multiple complaints, up
 
 • Two types of users   
     1) Clients    
-      - signup /login 
-      - create complaint, 
-      - upload documents,
-      - view update and status of each complaints,
-      - view important contact information,
+      - login. 
+      - create complaint. 
+      - upload documents.
+      - view update and status of each complaints.
+      - view important contact information.
       
     2)Admin
       - login
