@@ -1,0 +1,65 @@
+
+<div>
+<app-contact-list (editData)="editContact($event)"></app-contact-list>
+</div>
+<hr/>
+<div class="col-sm-8 mt-3 mb-3" style="box-shadow: 1px 4px 33px 0px; border-radius: 10px 0; margin-bottom: 2%">
+    <h2>Create Contact Information</h2>
+    <h3>{{message}}</h3>
+    <div>
+      <span>{{responseMsg}}</span>
+      <form [formGroup]="informationForm" (ngSubmit)="onSubmit()">
+       <!-- <form *ngIf="forEditData"[formGroup]="informationForm" (ngSubmit)="handleEditSubmit()"></form> -->
+  
+        <div class="form-group">
+          <label style="margin-right:1% !important">Department: </label>
+          <select class="form-control" formControlName="department">
+            <option value="">Select Department Type</option>
+            <option value="Academic">Academic</option>
+            <option value="Account">Account</option>
+            <option value="Adminstration">Adminstration</option>
+            <option value="Housing">Housing</option>
+            <option value="Security">Security</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="name">Name :</label>
+          <input  class="form-control" id="name" formControlName="name" placeholder="Your Name"/>
+          <div *ngIf="!informationForm.get('name')?.valid"> 
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="position">Position :</label>
+            <input class="form-control" id="position" formControlName="position" placeholder="Position of Person"/>
+            <div *ngIf="!informationForm.get('position')?.valid"> 
+            </div>
+          </div>
+        <div class="form-group">
+            <label for="email">Email :</label>
+            <input class="form-control" id="email" formControlName="email" placeholder="Email of person"/>
+            <div *ngIf="!informationForm.get('email')?.valid"> 
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input class="form-control" id="phone" formControlName="phone" placeholder="Phone of person"/>
+            <div *ngIf="!informationForm.get('phone')?.valid"> 
+            </div>
+          </div>
+        <div class="form-group">
+          <label for="description">Any Description :</label>
+          <textarea type="textarea" class="form-control" id="description" formControlName="description" placeholder="Description if any"></textarea>
+        </div>
+        <div class="form-group">
+          <button *ngIf="!forEditData, else update"   type="submit"  class="btn btn-success" class="btn btn-primary" [disabled]="!informationForm.valid">Submit</button> 
+          <ng-template #update><button type="submit"  class="btn btn-success" class="btn btn-warning" [disabled]="!informationForm.valid">Update Submit</button> </ng-template>
+          <button type="reset"  class="btn btn-success">Reset</button>
+          <button type="reset"  class="btn btn-danger" (click) = "cancelUpdate()">Cancel</button>
+          <button type="reset"  class="btn btn-secondary" (click)= "goBack()">Back</button>
+        </div>
+      </form> 
+     
+    </div>
+  </div>
+<span>{{this.responseMsg}}</span>

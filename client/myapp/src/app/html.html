@@ -1,0 +1,50 @@
+<div style="border: 1px solid">
+    <h2>Complaint Description Form </h2>
+    <div>
+        <h3>Please provide us the required information for filling the compalint</h3>
+        <span>{{responseMsg}}</span>
+        <form [formGroup]="complaintForm" (ngSubmit)="onSubmit()" class="col-sm-8">
+            <div class="form-group">
+                <label style="margin-right:1% !important">Complaint Type: </label>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                    formControlName="type">
+                    <option selected>Select Complaint Type</option>
+                    <option value="Housing">Housing</option>
+                    <option value="Academic">Academic</option>
+                    <option value="Food">Food</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label style="margin-right:1% !important">Complaint Priority</label>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                    formControlName="priority">
+                    <option selected>Complaint Priority</option>
+                    <option value="Urgent">Urgent</option>
+                    <option value="Important">Important</option>
+                    <option value="Inform">Inform</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="name">Name :</label>
+                <input class="form-control" id="name" formControlName="name" placeholder="Your Name" />
+                <div *ngIf="!complaintForm.get('password')?.valid">
+                    Password must be minimun 8 characters
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="complaint">Complaint Description :</label>
+                <textarea type="textarea" class="form-control" id="complaint" formControlName="complaint"
+                    placeholder="Describe complain"></textarea>
+                <div class="file">
+                    Upload Complaint file(if any)
+                    <input type="file" (change)="handleFileUpload($event)" />
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" [disabled]="!complaintForm.valid">Submit</button>
+                <button type="cancel" class="btn btn-warning" (click)="cancelForm()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
