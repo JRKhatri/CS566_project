@@ -6,7 +6,7 @@ const mybucket = require('../aws.json');
 const { SNS } = require('aws-sdk');
 const { Buffer } = require('buffer')
 
-//References  code:https://stackabuse.com/publishing-and-subscribing-to-aws-sns-messages-with-node-js/ for sns and s3 bucket
+
 const s3 = new AWS.S3(mybucket);
 const credentials = new AWS.SharedIniFileCredentials({ profile: 'sns_profile' });
 const sns = new AWS.SNS({ credentials: credentials, region: 'us-east-1' });

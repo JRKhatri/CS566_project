@@ -6,9 +6,9 @@ const AWS = require('aws-sdk')
 const User = require('../models/User');
 const config = require('../config.json');
 
-//source code:https://stackabuse.com/publishing-and-subscribing-to-aws-sns-messages-with-node-js/
 
-
+const credentials = new AWS.SharedIniFileCredentials({ profile: 'sns_profile' });
+const sns = new AWS.SNS({ credentials: credentials, region: 'us-east-1' });
 
 /* signup function */
 
@@ -45,7 +45,7 @@ exports.signup = async (req, res, next) => {
         if (user.role === 'ADMIN') {
             let params = {
                 Protocol: 'EMAIL',
-                TopicArn: 'arn:aws:sns:us-east-1:XXXXXXXXXXXXX',
+                TopicArn: 'arn:aws:sns:us-east-1:8421667XXXXX:XXXXXXXXXXProject',
                 Endpoint: email
             };
             sns.subscribe(params, (err, data) => {
